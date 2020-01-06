@@ -1,0 +1,29 @@
+form {
+  width: 40vw;
+  .form-group {
+    input, textarea {
+      border-radius: 15px;
+      overflow: hidden;
+    }
+  }
+
+  button,
+  input[type="submit"] {
+    width: 100px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  form {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 494px) {
+  form {
+    width: 80vw;
+  }
+}

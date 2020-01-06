@@ -1,0 +1,26 @@
+div {
+  width: 40vw;
+  h3 {
+    margin-bottom: 15px;
+    word-wrap: break-word;
+  }
+
+  button {
+    width: 100px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  div {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 494px) {
+  div {
+    width: 80vw;
+  }
+}

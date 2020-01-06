@@ -1,0 +1,79 @@
+<div class="container">
+    <form [formGroup]="dashboardForm">
+        <h4>Create new chat room</h4>
+
+        <div class="form-group">
+            <label for="roomName">Name</label>
+            <input class="form-control"
+                   [ngClass]="{'is-invalid': !dashboardForm.get('roomName').valid && dashboardForm.get('roomName').dirty }"
+                   type="text"
+                   placeholder="Enter room name"
+                   formControlName="roomName">
+        </div>
+
+        <div class="form-group">
+            <label for="roomDescription">Description</label>
+            <textarea class="form-control"
+                      [ngClass]="{'is-invalid': !dashboardForm.get('roomDescription').valid }"
+                      type="text"
+                      placeholder="Enter room description (optional)"
+                      formControlName="roomDescription">
+            </textarea>
+        </div>
+
+        <input class="btn btn-info"
+               [disabled]="!dashboardForm.valid"
+               type="submit"
+               (click)="onCreateRoom()">
+    </form>
+
+    <div>
+        <p *ngIf="isLoading && !error">
+            Loading...
+        </p>
+
+        <p *ngIf="rooms.length < 1 && !isLoading && !error">
+            No romms avaliable!
+        </p>
+
+        <div class="alert alert-danger"
+             *ngIf="error">
+            <h2>An error occured!</h2>
+            <p>{{ error }}</p>
+            <button class="btn btn-danger"
+                    (click)="handleError()">
+                Okay
+            </button>
+        </div>
+
+        <ul class="list-group"
+            *ngIf="rooms.length > 0 && !isLoading && !error">
+            <li class="list-group-item"
+                *ngFor="let room of rooms.slice().reverse()">
+                <div class="view-cell">
+                    <div class="room-info">
+                        <h4>{{ room.name }}</h4>
+                        <p>{{ room.description }}</p>
+                    </div>
+
+                    <button class="btn btn-success"
+                            (click)="onJoinRoom(room)">
+                        Join
+                    </button>
+
+                    <div class="manage">
+                        <button class="btn btn-primary"
+                                (click)="onUpdateRoom(room)">
+                            &#x21ba;
+                        </button>
+
+                        <button class="btn btn-danger"
+                                (click)="onDeleteRoom(room)">
+                            &#x292C;
+                        </button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

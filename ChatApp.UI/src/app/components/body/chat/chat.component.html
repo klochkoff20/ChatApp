@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="title">
+    <span class="nick-name">{{ nickName }}</span>
+
+    <span class="room-name">{{ roomName }}</span>
+
+    <span class="user-count">{{ userCount }} participant(s)</span>
+  </div>
+
+  <div class="messages">
+    <div [ngClass]="{true: 'outgoing', false: 'incoming' }[msg.fromOwner]"
+         *ngFor="let msg of messages">
+      <span class="nick-name"
+            *ngIf="!msg.fromOwner">
+        {{ msg.nickName }}
+      </span>
+
+      <p>
+        {{ msg.content }}
+      </p>
+
+      <span class="time-date">
+        {{ msg.date | date:'medium' }}
+      </span>
+    </div>
+  </div>
+
+  <form [formGroup]="messageForm">
+    <input class="form-control"
+           [ngClass]="{'is-invalid': !messageForm.valid && messageForm.get('message').dirty}"
+           placeholder="Type your message here..."
+           (keydown.control.enter)="sendMessage()"
+           formControlName="message"/>
+
+    <button class="btn btn-info"
+            [disabled]="!messageForm.valid"
+            (click)="sendMessage()">
+      Send
+    </button>
+  </form>
+</div>

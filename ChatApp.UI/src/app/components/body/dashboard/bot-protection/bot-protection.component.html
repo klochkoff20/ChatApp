@@ -1,0 +1,22 @@
+<form [formGroup]="botProtectionForm">
+    <h4>To join "<em>{{ room }}</em>" solve the equasion:</h4>
+    
+    <div class="form-group">
+        <p>Time left: {{ timeLeft }}s</p>
+
+        <span>{{ firstNumber }} + {{ secondNumber }} = </span>
+
+        <input class="form-control"
+               [ngClass]="{'is-invalid': !botProtectionForm.valid && botProtectionForm.get('result').dirty || invalidResult || !timeLeft }"
+               type="number"
+               formControlName="result">
+    </div>
+
+    <input class="btn btn-info"
+           type="submit"
+           [disabled]="!botProtectionForm.valid || !timeLeft"
+           (click)="openRoom()">
+
+    <button class="btn btn-danger"
+            (click)="close()">Close</button>
+</form>

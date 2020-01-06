@@ -1,0 +1,47 @@
+form {
+  width: 40vw;
+  border-radius: 15px;
+  h4 {
+    word-wrap: break-word;
+  }
+
+  .form-group {
+    margin: 5px;
+    p {
+      color: gray;
+      font-style: italic;
+      text-align: right;
+    }
+
+    span {
+      width: 20%;
+    }
+
+    .form-control {
+      display: inline-block;
+      width: 80%;
+      margin: -5px 5px 10px 5px;
+      border-radius: 15px;
+    }
+  }
+
+  button,
+  input[type="submit"] {
+    width: 100px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  form {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 494px) {
+  form {
+    width: 80vw;
+  }
+}

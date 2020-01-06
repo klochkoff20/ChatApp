@@ -1,0 +1,118 @@
+//$accent-color: rgba(186, 186, 186, 0.8);
+$accent-color: rgba(36, 37, 98, 0.8);
+
+.btn {
+  border-radius: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  padding: 0;
+  padding-bottom: 15px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin: 2.5% 0;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
+  
+  form {
+    align-self: flex-start;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: $accent-color;
+    margin-bottom: 5px;
+    padding: 1% 2%;
+    color: white;
+    font-size: 20px;
+    word-wrap: break-word;
+    h4 {
+      margin-left: 15px;
+    }
+
+    .form-group {
+      padding: 5px;
+      label {
+        margin-bottom: 2px;
+        margin-left: 13px;
+      }
+
+      input,
+      textarea {
+        height: 40px;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+    }
+
+    input[type="submit"] {
+      margin: 10px 5px;
+      width: 15%;
+    }
+  }
+
+  div {
+    overflow-y: auto;
+    p {
+      margin: 15px;
+    }
+
+    ul {
+      li {
+        background-color: rgba(186, 186, 186, 0.3);
+        border-radius: 25px;
+        border: none;
+        margin: 5px 15px;
+        .view-cell {
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          .room-info {
+            width: 80%;
+            margin: 10px;
+            padding-right: 10px;
+            word-wrap: break-word;
+            p {
+              margin: 0;
+            }
+          }
+
+          .btn-success {
+            height: 83px;
+            width: 10%;
+          }
+
+          .manage {
+            display: flex;
+            flex-direction: column;
+            width: 7%;
+            margin: 5px;
+            button {
+              margin: 5% 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .manage {
+    width: 10%;
+  }
+}
+
+@media (max-width: 494px) {
+  .manage {
+    width: 15%;
+  }
+}

@@ -1,0 +1,20 @@
+<form [formGroup]="setNickNameForm">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control"
+               [ngClass]="{'is-invalid': !setNickNameForm.get('name').valid }"
+               type="text"
+               placeholder="Enter nickname"
+               formControlName="name">
+    </div>
+
+    <input class="btn btn-info"
+           type="submit"
+           [disabled]="!setNickNameForm.valid"
+           (click)="setNickName()">
+           
+    <button class="btn btn-danger"
+            (click)="close()">
+        Close
+    </button>
+</form>

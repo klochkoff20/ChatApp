@@ -1,0 +1,128 @@
+//$accent-color: rgba(186, 186, 186, 0.8);
+$accent-color: rgba(36, 37, 98, 0.8);
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  height: 95%;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 50px 0;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
+  .title {
+    align-self: flex-start;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: $accent-color;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    word-wrap: break-word;
+    .nick-name {
+      font-style: italic;
+      font-size: 0.8em;
+    }
+
+    .room-name {
+      font-size: 1.1em;
+    }
+    
+    .user-count {
+      font-size: 0.8em;
+    }
+  }
+
+  .messages {
+    flex-grow: 2;
+    margin: 0;
+    padding: 10px 20px;
+    overflow-y: auto;
+    div {
+      display: flex;
+      flex-direction: column;
+      vertical-align: top;
+      width: 80%;
+      margin: 5px 0;
+      padding: 5px 10px;
+      border-radius: 15px;
+      p {
+        width: 100%;
+        font-size: 1em;
+        margin: 0;
+        word-wrap: break-word;
+        color: white;
+        text-shadow: none;
+      }
+
+      .time-date {
+        text-align: right;
+        margin-top: 5px;
+        font-size: 0.8em;
+        color: white;
+        text-shadow: none;
+      }
+    }
+
+    .incoming {
+      background-color: rgb(255, 255, 255);
+      margin-top: 10px;
+      .nick-name {
+        margin-bottom: 5px;
+        font-size: 0.85em;
+        font-style: normal;
+        color: rgb(0, 0, 0);
+        text-shadow: none;
+        font-weight: 600;
+      }
+
+      p {
+        color: rgb(0, 0, 0);
+      }
+
+      .time-date {
+        color: rgb(0, 0, 0);
+      }
+    }
+
+    .outgoing {
+      float: right;
+      background-color: rgb(38, 138, 221);
+    }
+  }
+
+  form {
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px 20px;
+    background-color: $accent-color;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    input {
+      width: 75%;
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 25px;
+      word-wrap: break-word;
+    }
+
+    button {
+      width: 15%;
+      height: 40px;
+      border-radius: 25px;
+      float: right;
+    }
+  }
+}
